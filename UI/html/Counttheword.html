@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Count Word</title>
+	</head>
+<body style="text-align: center;">
+<h1> Count word and letter</h1>
+    <textarea id="inputField" rows=10 cols="50">
+    </textarea>
+    <br><br>
+ 
+    <button onclick="countWords()">
+        Count Words
+    </button>
+<button onclick="wordcount()">
+        Letter Words
+    </button>
+
+    <br><br>    
+<p> Word Count:
+        <span id="show">0</span>
+    </p>
+ 
+<p> Letter Count:
+        <span id="ltr">0</span>
+    </p>
+    <script>
+        function countWords() {
+
+   function wordcout(){
+                    var text = document.getElementById("inputField").value;
+                    var strcount = text.replace(/[^A-Z]/gi, "").length;
+                    var numWords = 0;
+            for (var i = 0; i < text.length; i++) {
+                var currentCharacter = text[i];
+                if (currentCharacter == " ") {
+                    numWords++;
+                }
+            }
+          
+            document.getElementById("show").innerHTML = numWords;
+            document.getElementById("ltr").innerHTML = strcount;
+        }               
+}
+    </script>
+</body>
+ 
+</html>
